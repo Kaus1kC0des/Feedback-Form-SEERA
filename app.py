@@ -54,7 +54,7 @@ def home():
                 db.session.add(review)
                 db.session.commit()
                 return redirect(url_for('success'))
-        return redirect(url_for('success'))  # Change this line
+        return render_template('home.html', message="You have already given your feedback!")
 
 
 @app.route("/submit", methods=["GET"])
